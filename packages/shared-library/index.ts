@@ -1,0 +1,1 @@
+export { sharedExample } from './src/example';

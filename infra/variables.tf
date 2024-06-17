@@ -7,12 +7,6 @@ variable "aws_region" {
   type        = string
 }
 
-variable "aws_default_region" {
-  description = "AWS Region"
-  type        = string
-  default     = "us-east-1"
-}
-
 variable "vpc_cidr" {
   type = string
 }

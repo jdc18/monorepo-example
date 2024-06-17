@@ -8,19 +8,13 @@ resource "vercel_project" "website2_project" {
   }
   build_command   = "pnpm run build"
   install_command = "pnpm install"
-  root_directory  = "packages/operator"
+  root_directory  = "packages/website2"
   ignore_command  = "git diff HEAD^ HEAD --quiet ./"
 }
 
 resource "vercel_project_domain" "website2_project" {
   project_id = vercel_project.website2_project.id
   domain     = "website2.${var.domain_name}"
-  team_id    = "${var.vercel_team_id}"
-}
-
-resource "vercel_project_domain" "frontend__operator_www" {
-  project_id = vercel_project.website2_project.id
-  domain     = "www.operator.${var.domain_name}"
   team_id    = "${var.vercel_team_id}"
 }
 
